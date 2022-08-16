@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" hef="/">
-          TextUtils
+          {props.title}
         </a>
         <button
           className="navbar-toggler"
@@ -27,7 +28,7 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <a className="nav-link" hef="/">
-                About
+                {props.aboutText}
               </a>
             </li>
           </ul>
@@ -47,3 +48,14 @@ export default function Navbar() {
     </nav>
   );
 }
+
+//text ka type change na ho uar kuch bhi value na bheji jaye
+Navbar.propTypes = {
+                        title: PropTypes.string.isRequired,
+                        aboutText: PropTypes.string.isRequired
+                    }
+//jab kuch pass nhi kiya jaye toh ye values use kare
+Navbar.defaultProps = {
+                        title: 'Set title',
+                        aboutText: 'About '
+                    }
