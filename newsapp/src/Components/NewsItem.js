@@ -5,7 +5,7 @@ export class NewsItem extends Component {
 
   render() {
 
-    let {title, description, imageUrl} = this.props;
+    let {title, description, imageUrl, url} = this.props;
 
     return (
       <div className="my-3">
